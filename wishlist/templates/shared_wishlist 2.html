@@ -1,0 +1,30 @@
+<div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
+    <table class="table my_custom_table">
+        <thead class="my_custom_thead">
+            <tr>
+                <th colspan="5">
+                    Goods I think are tasty
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for wishlist_item in wishlist_items %}
+            <tr>
+                <td>
+                    <a href="{{wishlist_item.product.get_url}}"><img src="{{wishlist_item.product.image.url}}" alt=""
+                            class="float-right custom_image"></a>
+                </td>
+                <td class="text-left">
+                    {{wishlist_item.product.name}}
+                    <br>
+                    Unit Price: €{{wishlist_item.product.price}}
+                    <br>
+                    Qty: {{wishlist_item.quantity}}
+                </td>
+            </tr>
+            {% endfor %}
+
+
+        </tbody>
+    </table>
+</div

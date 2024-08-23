@@ -1,0 +1,308 @@
+[
+    {
+        "model": "shop.category",
+        "pk": "050b1d5a-8103-491a-925a-f1a14249a733",
+        "fields": {
+            "name": "Cookies",
+            "description": "Indulge in the simple pleasure of freshly baked cookies from our bakery. Our cookie category is a treasure trove of sweet delights, offering everything from chewy chocolate chip cookies to delicate sugar cookies decorated with care. Each bite is a taste of nostalgia and comfort, perfect for dunking in a glass of milk or enjoying on its own. Whether you're craving a classic favorite or seeking something new, our cookies are sure to delight your taste buds.",
+            "image": "category/birthday-cake-ny-cookie-crumbs-and-doilies-2_960x_crop_center.jpg.webp"
+        }
+    },
+    {
+        "model": "shop.category",
+        "pk": "921ac9ce-e5de-40a0-b97b-b4365f3f72a7",
+        "fields": {
+            "name": "Cupcakes",
+            "description": "Satisfy your cravings with our charming collection of cupcakes, where every bite is a mini celebration. Our cupcakes come in an assortment of flavors and designs, from elegant vanilla bean to decadent chocolate fudge. Topped with creamy frosting and whimsical decorations, each cupcake is a delightful treat for any occasion. Whether you're planning a party or simply indulging in a sweet snack, our cupcakes are guaranteed to add a touch of joy to your day.",
+            "image": "category/cookies-and-cream-cupcakes-crumbs-and-doilies-1_960x_crop_center.jpg.webp"
+        }
+    },
+    {
+        "model": "shop.category",
+        "pk": "9b8b899e-00b3-4a3d-9da6-565187f0e73a",
+        "fields": {
+            "name": "Cakes",
+            "description": "Explore our cake category for delicious treats crafted with care. From classic flavors to dietary-friendly options, there's something for everyone. Treat yourself or surprise a loved one with a slice of joy from our bakery.",
+            "image": "category/deva-williamson-ntfGWVbBiO0-unsplash.jpg"
+        }
+    },
+    {
+        "model": "shop.category",
+        "pk": "bc280944-ce7d-4e75-874a-f0b0d63b74ed",
+        "fields": {
+            "name": "Donuts",
+            "description": "Dive into our delightful selection of donuts, where every bite is a burst of flavor and fun. Our freshly made donuts come in a variety of shapes and sizes, from classic glazed rings to colorful sprinkled creations. Whether you prefer traditional flavors like chocolate and cinnamon or adventurous combinations like maple bacon and fruity pebbles, our donuts are sure to satisfy your sweet tooth. Treat yourself to a box of joy or share the love with friends and family.",
+            "image": "category/heather-ford-Fq54FqucgCE-unsplash.jpg"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": "22827e11-6727-4832-9609-90cd67199f32",
+        "fields": {
+            "name": "ULTIMATE LEMON DRIZZLE CAKE",
+            "description": "Truly the ultimate lemon cake; light, zingy and zesty lemon sponge filled with lemon buttercream & fresh lemon curd. Decorated with lemon buttercream, crushed meringue pieces, fresh lemon curd drizzle and scratch-made pie crumb topping.",
+            "category": "9b8b899e-00b3-4a3d-9da6-565187f0e73a",
+            "price": "90.00",
+            "image": "product/deva-williamson-YQfotyreo2A-unsplash_VFKaZQD.jpg",
+            "stock": 5,
+            "available": true,
+            "created": "2024-03-23T16:40:40.317Z",
+            "updated": "2024-03-23T16:40:40.317Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": "22c07695-9b08-4f32-a10c-f4117a1518da",
+        "fields": {
+            "name": "CHOC CHIP NEW YORK COOKIE",
+            "description": "The OG, the Classic, now and forever more one of our favourite Cookies. The NY Cookie that kicked it all off, featuring chunks and chips of Dark and Milk Chocolate, perfectly mixed for that oozy, chewy, NY Cookie experience.",
+            "category": "050b1d5a-8103-491a-925a-f1a14249a733",
+            "price": "13.00",
+            "image": "product/MiniEggCookieGROUP_960x_crop_center.jpg.webp",
+            "stock": 6,
+            "available": true,
+            "created": "2024-03-23T16:44:30.863Z",
+            "updated": "2024-03-23T16:44:30.863Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": "23c48019-89e4-4691-bae3-082b0d0999b4",
+        "fields": {
+            "name": "STRAWBERRIES AND KREME",
+            "description": "Fruity strawberry and kreme filling, hand dipped in strawberry icing and topped with strawberry pieces.",
+            "category": "bc280944-ce7d-4e75-874a-f0b0d63b74ed",
+            "price": "6.00",
+            "image": "product/kk_single_prettylittleunicorn_td_shop-image-1.png",
+            "stock": 19,
+            "available": true,
+            "created": "2024-03-23T16:47:49.684Z",
+            "updated": "2024-03-23T16:47:49.684Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": "2a56038a-d024-44e2-9cb0-ce76aa6ad492",
+        "fields": {
+            "name": "VANILLA CUPCAKES",
+            "description": "Classic Vanilla cupcakes topped with buttercream icing and sprinkles.",
+            "category": "921ac9ce-e5de-40a0-b97b-b4365f3f72a7",
+            "price": "7.00",
+            "image": "product/VanillaBox_960x_crop_center.jpg.webp",
+            "stock": 15,
+            "available": true,
+            "created": "2024-03-23T16:42:54.250Z",
+            "updated": "2024-03-23T16:42:54.250Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": "308455b0-6832-4a23-88d1-b577fe0fb43a",
+        "fields": {
+            "name": "PRETTY DONUT",
+            "description": "Dipped in strawberry icing and sprinkles, finished with purple frosting.",
+            "category": "bc280944-ce7d-4e75-874a-f0b0d63b74ed",
+            "price": "6.00",
+            "image": "product/menu-images-templates-menu-singles-600x600px-s_k.png",
+            "stock": 8,
+            "available": true,
+            "created": "2024-03-23T16:50:06.350Z",
+            "updated": "2024-03-23T16:50:06.350Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": "3f2d0b6c-b2db-4b82-8c66-f1d5baeb4485",
+        "fields": {
+            "name": "PICK N MIX CAKE",
+            "description": "4 layers of multi-coloured pastel marble sponge, filled and iced with vanilla buttercream. Decorated with a drip, buttercream stripes and a selection of everyones favourite pick n mix sweets.",
+            "category": "9b8b899e-00b3-4a3d-9da6-565187f0e73a",
+            "price": "75.00",
+            "image": "product/deva-williamson-xsewKO_jTMk-unsplash.jpg",
+            "stock": 3,
+            "available": true,
+            "created": "2024-03-23T16:38:49.456Z",
+            "updated": "2024-03-23T16:38:49.456Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": "40d04320-f4ce-4ce3-81b9-54f40a9d50ee",
+        "fields": {
+            "name": "FAVOURITE COFFEE & WALNUT CAKE",
+            "description": "Our take on the favourite Coffee & Walnut Cake is made with three layers of coffee and ground walnut sponge, filled and decorated with espresso buttercream and topped with walnut and coffee pieces.",
+            "category": "9b8b899e-00b3-4a3d-9da6-565187f0e73a",
+            "price": "80.00",
+            "image": "product/deva-williamson-YQfotyreo2A-unsplash.jpg",
+            "stock": 8,
+            "available": true,
+            "created": "2024-03-23T16:40:06.307Z",
+            "updated": "2024-03-23T16:40:06.307Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": "5f95d202-426e-41b5-963a-04b6f3679073",
+        "fields": {
+            "name": "GLAZED DONUT",
+            "description": "Our signature ring doughnut – a light and fluffy dough with our classic glaze.",
+            "category": "bc280944-ce7d-4e75-874a-f0b0d63b74ed",
+            "price": "6.00",
+            "image": "product/menu-images-templates-menu-singles-600x600px-og_1.png",
+            "stock": 50,
+            "available": true,
+            "created": "2024-03-23T16:47:05.884Z",
+            "updated": "2024-03-23T16:47:05.884Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": "60a4a79a-07d9-47b4-9627-6299af029af8",
+        "fields": {
+            "name": "RASPBERRY RIPPLE CAKE",
+            "description": "A true classic and one of our all-time favourite cakes. 8-layers of rippled raspberry and vanilla sponge with a fresh raspberry and buttercream filling and raspberry-rippled vanilla buttercream icing. Topped with raspberry goo and fresh raspberries.",
+            "category": "9b8b899e-00b3-4a3d-9da6-565187f0e73a",
+            "price": "90.00",
+            "image": "product/deva-williamson-ntfGWVbBiO0-unsplash.jpg",
+            "stock": 4,
+            "available": true,
+            "created": "2024-03-23T16:36:57.729Z",
+            "updated": "2024-03-23T16:36:57.729Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": "77e4b138-6fb6-403e-a2de-740de8549bb5",
+        "fields": {
+            "name": "GINGER WHITE CHOCOLATE NEW YORK COOKIE",
+            "description": "The Godzilla of Ginger Biscuits. Made with Crystalised Organic Ginger, Caramelised White Chocolate, White Chocolate Chips, Ground Ginger and spices.",
+            "category": "050b1d5a-8103-491a-925a-f1a14249a733",
+            "price": "13.00",
+            "image": "product/blueberry-and-lemon-ny-cookie-crumbs-and-doilies-2_960x_crop_center.jpg.webp",
+            "stock": 8,
+            "available": true,
+            "created": "2024-03-23T16:46:00.535Z",
+            "updated": "2024-03-23T16:46:00.535Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": "7d34a1ed-f6e0-4389-84d8-779e7cf5c909",
+        "fields": {
+            "name": "BESPOKE CAKE",
+            "description": "Bespoke Cakes, made to order by Crumbs & Doilies. Use the Cake Builder to choose everything from your sponge to the filling, icing and decoration, then let our bakers and decorators bring your cake creation to life!",
+            "category": "9b8b899e-00b3-4a3d-9da6-565187f0e73a",
+            "price": "120.00",
+            "image": "product/deva-williamson-sjsG1yrwJxY-unsplash.jpg",
+            "stock": 2,
+            "available": true,
+            "created": "2024-03-23T16:37:35.884Z",
+            "updated": "2024-03-23T16:37:35.884Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": "88a9eba2-8310-469f-a923-877451320393",
+        "fields": {
+            "name": "OREO CUPCAKES",
+            "description": "Dark chocolate sponge topped with buttercream Oreo icing, drizzled chocolate ganache and Oreo chunks.",
+            "category": "921ac9ce-e5de-40a0-b97b-b4365f3f72a7",
+            "price": "8.00",
+            "image": "product/cookies-and-cream-cupcakes-crumbs-and-doilies-1_960x_crop_center.jpg.webp",
+            "stock": 12,
+            "available": true,
+            "created": "2024-03-23T16:43:39.481Z",
+            "updated": "2024-03-23T16:43:39.481Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": "8b2d8c62-0156-4561-9f0a-d8e033971872",
+        "fields": {
+            "name": "PRETTY IN PINK CUPCAKES",
+            "description": "Vanilla Cupcakes topped with pink and white buttercream, sprinkles, hearts, mini donuts, meringues and mini Jammie Dodgers.",
+            "category": "921ac9ce-e5de-40a0-b97b-b4365f3f72a7",
+            "price": "7.00",
+            "image": "product/PrettyInPinkBIG_960x_crop_center.jpg.webp",
+            "stock": 18,
+            "available": true,
+            "created": "2024-03-23T16:42:22.616Z",
+            "updated": "2024-03-23T16:42:22.616Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": "9ae3da6d-f30a-40ec-abfb-4e6207ba1523",
+        "fields": {
+            "name": "BIRTHDAY CAKE NEW YORK COOKIE",
+            "description": "Next-level super chunky NY Cookie made with generous helpings of Caramelised White Chocolate, White Chocolate Chips and Rainbow Sprinkles.",
+            "category": "050b1d5a-8103-491a-925a-f1a14249a733",
+            "price": "12.00",
+            "image": "product/julissa-capdevilla-tDoHiqXl9b8-unsplash.jpg",
+            "stock": 12,
+            "available": true,
+            "created": "2024-03-23T16:45:20.482Z",
+            "updated": "2024-03-23T16:45:20.482Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": "9f2da946-27d5-4493-b463-bf1e80d5f889",
+        "fields": {
+            "name": "RED VELVET CAKE",
+            "description": "A total classic. 4 layers of rich, moist Red Velvet sponge filled and iced with a smooth, tangy whipped cream cheese buttercream.",
+            "category": "9b8b899e-00b3-4a3d-9da6-565187f0e73a",
+            "price": "90.00",
+            "image": "product/deva-williamson-HHebuDYjP4I-unsplash.jpg",
+            "stock": 2,
+            "available": true,
+            "created": "2024-03-23T16:39:28.424Z",
+            "updated": "2024-03-23T16:39:28.424Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": "c0ab9628-70ae-4488-a703-c222f5fa49d3",
+        "fields": {
+            "name": "CHOCOLATE DONUT",
+            "description": "Chocolate brownie batter filling, hand-dipped in chocolatey icing and topped with chocolate curls.",
+            "category": "bc280944-ce7d-4e75-874a-f0b0d63b74ed",
+            "price": "6.00",
+            "image": "product/menu-images-templates-menu-singles-600x600px-choc-sprinles_1.png",
+            "stock": 13,
+            "available": true,
+            "created": "2024-03-23T16:48:54.004Z",
+            "updated": "2024-03-23T16:48:54.004Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": "e6676ba0-1664-4823-a3b7-2fea0ff401ba",
+        "fields": {
+            "name": "SALTED CARAMEL CAKE",
+            "description": "Rich, indulgent and utterly decadent, our Salted Caramel cake is 4 layers of super moist caramel sponge, filled with salted caramel icing and generous pools of salted caramel. Iced with salted caramel buttercream and even more salted caramel.",
+            "category": "9b8b899e-00b3-4a3d-9da6-565187f0e73a",
+            "price": "80.00",
+            "image": "product/deva-williamson-TiSLq6Gbftg-unsplash.jpg",
+            "stock": 6,
+            "available": true,
+            "created": "2024-03-23T16:38:09.380Z",
+            "updated": "2024-03-23T16:38:09.380Z"
+        }
+    },
+    {
+        "model": "shop.product",
+        "pk": "f6e2a69a-7545-40a5-81d5-6069b4b93e51",
+        "fields": {
+            "name": "NEAPOLITAN CAKE",
+            "description": "From the ice cream parlour to the cake stand! Inspired by one of our favourite mix and match ice cream flavours the Neapolitan Cake is 6 whole layers of chocolate, vanilla and strawberry sponge with vanilla buttercream and a chocolate ganache drip. Decorated with whipped buttercream icing, hundreds & thousands and ice cream wafers.",
+            "category": "9b8b899e-00b3-4a3d-9da6-565187f0e73a",
+            "price": "95.00",
+            "image": "product/deva-williamson-fwQPafiNB2c-unsplash.jpg",
+            "stock": 2,
+            "available": true,
+            "created": "2024-03-23T16:41:21.415Z",
+            "updated": "2024-03-23T16:41:21.415Z"
+        }
+    }
+]

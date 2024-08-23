@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% load static %}
+{% block metadescription %}
+Wishlist Page
+{% endblock %}
+{% block title %}
+Wishlist
+{% endblock %}
+{% block content %}
+{% if not wishlist_items %}
+<div>
+    <div class="text-center">
+        <br>
+        <h1 class="text-center my_title">
+            Your wishlist is empty
+        </h1>
+        <br>
+        <p class="text-center">
+            Please click <a href="{% url 'shop:product-list' %}">here</a> to continue shopping.
+        </p>
+    </div>
+</div>
+{% else %}
+<div>
+    <div class="text-center">
+        <br>
+        <h1 class="text-center my_title">
+            Your wishlist
+        </h1>
+        <br>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="container">
+    <div class="row mx-auto">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
+            <table class="table my_custom_table">
+                <thead class="my_custom_thead">
+                    <tr>
+                        <th colspan="5">
+                            Your items
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for wishlist_item in wishlist_items %}
+                    <tr>
+                        <td>
+                            <a href="{{wishlist_item.product.get_url}}"><img src="{{wishlist_item.product.image.url}}"
+                                    alt="" class="float-right custom_image"></a>
+                        </td>
+                        <td class="text-left">
+                            {{wishlist_item.product.name}}
+                            <br>
+                            Unit Price: €{{wishlist_item.product.price}}
+                            <br>
+                            Qty: {{wishlist_item.quantity}}
+                        </td>
+                        {% if cart_item.quantity < cart_item.product.stock %} <td>
+                            <a href="{% url 'wishlist:add_wishlist' wishlist_item.product.id %}" class="custom_a"><i
+                                    class="fas fa-plus-circle custom_icon"></i></a>&nbsp;
+                            <a href="{% url 'wishlist:wishlist_remove' wishlist_item.product.id %}" class="custom_a"><i
+                                    class="fas fa-minus-circle custom_icon"></i></a>&nbsp;
+                            <a href="{% url 'wishlist:full_remove' wishlist_item.product.id %}" class="custom_icon"><i
+                                    class="fas fa-trash-alt custom_icon"></i></a>
+                            </td>
+                            {% else %}
+                            <td>
+                                <a href="{% url 'wishlist:add_wishlist' wishlist_item.product.id %}" class="custom_a"><i
+                                        class="fas fa-plus-circle custom_icon"></i></a>&nbsp;
+                                &nbsp;<a href="{% url 'wishlist:wishlist_remove' wishlist_item.product.id %}"
+                                    class="custom_a"><i class="fas fa-minus-circle custom_icon"></i></a>&nbsp;
+                                <a href="{% url 'wishlist:full_remove' wishlist_item.product.id %}"
+                                    class="custom_icon"><i class="fas fa-trash-alt custom_icon"></i></a>
+                            </td>
+                            <td></td>
+                            {% endif %}
+                    </tr>
+                    {% endfor %}
+
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-lg-6">
+            <form class="d-flex" action="{% url 'wishlist:wishlist_search' %}" method="get">
+                <input class="form-control me-2" type="search" placeholder="Search Wishlist" aria-label="Search"
+                    name="q">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+
+            {% if search_results %}
+            <div class="container">
+                <div class="row">
+                    <table class="table my_custom_table">
+
+                        {% for wishlist_item in search_results %}
+                        <tr>
+                            <td>
+                                <a href="{{wishlist_item.product.get_absolute_url}}"><img
+                                        src="{{wishlist_item.product.image.url}}" alt="{{wishlist_item.product.name}}"
+                                        class="float-right rounded custom_image img_cart"></a>
+                            </td>
+                            <td class="text-left">
+                                {{wishlist_item.product.name}}
+                                <br>
+                                Unit Price: €{{wishlist_item.product.price}}
+                                <br>
+                                Qty: {{wishlist_item.quantity}}
+                            </td>
+
+                            {% endfor %}
+
+                </div>
+                {% endif %}
+
+            </div>
+            </table>
+
+
+
+        </div>
+
+
+
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="text-center">
+        <p class="text-center">Loved ones not sure what to get for your special occasion? Help them out a
+            little!
+        </p>
+        <p class="text-center">(Feature not yet available)
+        </p>
+
+        <a href="/templates/wishlist_email.html" class="btn btn-secondary my-2 my-sm-0 col-lg-4">Share Wishlist
+            Using Email</a>
+
+
+    </div>
+
+</div>
+<br>
+{% endif %}
+{% endblock %}

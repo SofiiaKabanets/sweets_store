@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% load static %}
+{% block metadescription %}
+This is the shopping cart page. Proceed to review your items and place the order.
+{% endblock %}
+{% block title %}
+Cart - Sweets Store
+{% endblock %}
+{% block content %}
+{% if not cart_items %}
+<div class="text-center mt-5">
+    <h1 class="my-4">Your shopping cart is empty</h1>
+    <p>Please click <a href="{% url 'shop:product-list' %}">here</a> to continue shopping.</p>
+</div>
+{% else %}
+<div class="text-center mt-4 mb-3">
+    <h1>Your shopping cart</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="5">Your items</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cart_item in cart_items %}
+                    <tr>
+                        <td>
+                            <a href="{{cart_item.product.get_absolute_url}}">
+                                <img src="{{cart_item.product.image.url}}" alt="{{cart_item.product.name}}"
+                                    class="rounded custom_image img_cart">
+                            </a>
+                        </td>
+                        <td class="text-left">
+                            <a href="{{cart_item.product.get_absolute_url}}" class="link-body-emphasis  link-underline-opacity-0">{{cart_item.product.name}}</a><br>
+                            Unit Price: €{{cart_item.product.price}}<br>
+                            Qty: {{cart_item.quantity}} x €{{cart_item.product.price}}
+                        </td>
+                        <td>€{{cart_item.sub_total}}</td>
+                        {% if cart_item.quantity < cart_item.product.stock %}
+                        <td class="align-middle">
+                            <a href="{% url 'cart:add_cart' cart_item.product.id %}">
+                                <i class="fas fa-plus-circle"></i>
+                            </a>
+                            <a href="{% url 'cart:cart_remove' cart_item.product.id %}">
+                                <i class="fas fa-minus-circle"></i>
+                            </a>
+                            <a href="{% url 'cart:full_remove' cart_item.product.id %}">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    {% else %}
+                        <td class="align-middle">
+                            <a href="{% url 'cart:cart_remove' cart_item.product.id %}">
+                                <i class="fas fa-minus-circle"></i>
+                            </a>
+                            <a href="{% url 'cart:full_remove' cart_item.product.id %}">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                        <td></td>
+                    {% endif %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div>
+                {% if user.is_authenticated %}
+                <h4 class="mb-5 mt-5">Recently Viewed Items:</h4>
+                <ul style="list-style: none; padding: 0; margin: 0; text-align: center;">
+                    {% for item in recommendations %}
+                    <li style="display: inline-block; margin-right: 20px; width: 200px; height: 250px;">
+                        <a href="{{ item.get_absolute_url }}" style="color: black; text-decoration: none; display: block; height: 100%;">
+                            <div style="height: 80%;">
+                                <img src="{{ item.image.url }}" alt="{{ item.name }}" class="rounded" style="width: 150px; height: 150px; object-fit: cover;">
+                            </div>
+                            <div style="height: 20%;">
+                                <p style="font-size: 12px; margin: 0; " >{{ item.name }}</p>
+                            </div>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+
+
+            <form action="" method="POST">
+                {% csrf_token %}
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="{{ data_key }}"
+                    data-amount="{{ stripe_total }}"
+                    data-name="Perfect Cushion Shop"
+                    data-description="{{ description }}"
+                    data-image="{% static 'images/logo.png' %}"
+                    data-locale="auto"
+                    data-currency="eur"
+                    data-shipping-address="true"
+                    data-billing-address="true"
+                    data-zip-code="true">
+                </script>
+            </form>
+
+
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">Checkout</div>
+                <div class="card-body">
+                    <p class="card-text">Please review your shopping cart items before proceeding with the order
+                        payment.</p>
+                        <p class="text-left">Your total is: <strong>€{{ total|floatformat:"2" }}</strong></p>
+
+                    <form method="post" action="{% url 'vouchers:apply' %}">
+                        {% csrf_token %}
+                        {{ voucher_form.as_p }}
+                        <button type="submit" class="btn btn-primary">Apply</button>
+                    </form>
+
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key="{{ data_key }}"
+                            data-amount="{{ stripe_total }}"
+                            data-name="Sweets Shop"
+                            data-description="{{ description }}"
+                            data-image="{% static 'images/logo.png' %}"
+                            data-locale="auto"
+                            data-currency="eur"
+                            data-shipping-address="true"
+                            data-billing-address="true"
+                            data-zip-code="true">
+                            </script>
+                        </form>
+
+                        
+                    <a href="{% url 'shop:product-list' %}" class="btn btn-secondary btn-block mt-2">Continue
+                        Shopping</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

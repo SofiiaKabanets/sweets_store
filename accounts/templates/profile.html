@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block metadescription %}
+View your profile.
+{% endblock %}
+{% block title %}
+Profile Page - Sweets Store
+{% endblock %}
+{% block content %}
+<div>
+    <div class="mx-auto">
+        <br />
+        {% if request.user.is_authenticated %}
+            <div class="container info-box">
+                    <h1 class="page-title text-center mb-5" style="width: 100%;">Viewing {% if profile.fname %} ({{profile.fname}}) {% endif %}{{ profile.user.username }}'s Profile</h1>
+
+                <br />
+                <h2 class="text-center" style="width: 100%;">Profile Information</h2>
+                <div class="text-center col-9 col-sm-9 col-md-6 col-lg-5 mx-auto info-box p-4">
+                    <img src="{% if profile.user.profile.picture %}{{ profile.user.profile.picture.url }}{% else %}{% static 'images/profile-default.jpg' %}{% endif %}" alt="Profile Picture" class="rounded-circle mr-3 mb-3" width="100" height="100">
+
+                    <p>Username: {{ profile.user.username }}</p>
+                    {% if profile.fname %}
+                    <p>Name: {{ profile.fname }} {% if profile.lname %}  {{ profile.lname }}</p>
+                    {%endif%}
+                     
+                    {%endif%}
+                    {% if profile.phone %}
+                    <p>Phone Number: {{ profile.phone }}</p>
+                    {%endif%}
+                    {% if profile.user.user_type %}
+                    <p>Account type: {{ profile.user.get_user_type_display  }}</p>
+                    {%endif%}
+                    <p>Member since: {{ profile.user.signup_date }}</p>
+                    {% if profile.biography %}
+                    <p>Biography: {{ profile.biography }}</p>
+                    {%endif%}
+
+
+                </div>
+                {% if request.user == profile.user %}
+                <div class="container-fluid info-box">
+                    <div class="d-flex justify-content-center">
+                        <a href="{% url 'accounts:profile_edit' user.profile.pk %}" class="btn btn-secondary mx-2">Edit profile</a>
+                        <a href="{% url 'accounts:password_change' %}" class="btn btn-secondary mx-2">Change password</a>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+</div>
+<br />
+{% endblock %}
